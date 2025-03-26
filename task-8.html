@@ -1,0 +1,76 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Task-08</title>
+    </head>
+    <body>
+        <a href="index.html">God Back</a>
+        <style>
+            .login-form {
+                width: 300px; /* Adjust width as needed */
+                margin: 0; /* Remove default margins */
+                padding: 20px;
+            }
+        
+            table {
+                margin-left: 0; /* Align to the left */
+            }
+        </style>
+        _
+        <form class="login-form">
+            <table>
+                <tr>
+                    <td><label for="email">Email</label></td>
+                    <td><input type="email" id="email" name="email" required /></td>
+                </tr>
+                <tr>
+                    <td><label for="password">Password</label></td>
+                    <td><input type="password" id="password" name="password" required /></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <button type="submit">Login</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+        
+        
+    </body>
+    </html>
+    
+
+      <script>
+                document.addEventListener("DOMContentLoaded", function () {
+        const loginForm = document.querySelector(".login-form");
+
+        loginForm.addEventListener("submit", function (event) {
+            event.preventDefault(); // Prevent page reload
+
+            const email = loginForm.elements.email.value.trim();
+            const password = loginForm.elements.password.value.trim();
+
+            if (!email || !password) {
+            alert("All fields must be filled in.");
+            return;
+            }
+
+            const formData = {
+            email,
+            password,
+            };
+
+            console.log(formData);
+
+            loginForm.reset();
+        });
+        });
+
+      </script>
+
+
+</body>
+</html>

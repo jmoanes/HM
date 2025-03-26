@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box Generator</title>
+    <style>
+        #boxes {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <input type="number" id="amount" placeholder="Enter number of boxes">
+    <button onclick="createBoxes()">Create Boxes</button>
+    <button onclick="destroyBoxes()">Destroy Boxes</button>
+    <div id="boxes"></div>
+
+    <script>
+        function getRandomHexColor() {
+            return `#${Math.floor(Math.random() * 16777215).toString(16).padStart(6, 0)}`;
+        }
+
+        function createBoxes() {
+            const amount = parseInt(document.getElementById("amount").value);
+            const boxesContainer = document.getElementById("boxes");
+            let size = 30;
+
+            boxesContainer.innerHTML = ''; // Clear existing boxes before adding new ones
+
+            for (let i = 0; i < amount; i++) {
+                const box = document.createElement("div");
+                box.style.width = `${size}px`;
+                box.style.height = `${size}px`;
+                box.style.backgroundColor = getRandomHexColor();
+                box.classList.add("box");
+                box.textContent = i + 1; // Display index inside the box
+                boxesContainer.appendChild(box);
+                size += 10;
+            }
+        }
+
+        function destroyBoxes() {
+            document.getElementById("boxes").innerHTML = "";
+        }
+    </script>
+
+</body>
+</html>

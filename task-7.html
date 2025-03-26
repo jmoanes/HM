@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task-07</title>
+</head>
+<body>
+
+    <a href="index.html">Go Back</a>
+    <br>
+
+    <input id="font-size-control" type="range" min="16" max="96" />
+    <br />
+    <span id="text">Abracadabra!</span>
+
+
+    <script>
+        
+        document.addEventListener("DOMContentLoaded", () => {
+            const fontSizeControl = document.querySelector("#font-size-control");
+            const text = document.querySelector("#text");
+        
+            fontSizeControl.addEventListener("input", () => {
+                text.style.fontSize = `${fontSizeControl.value}px`;
+            });
+        });
+        
+    </script>
+
+</body>
+</html>

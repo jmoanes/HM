@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task-01</title>
+</head>
+<body>
+    
+    <a href="index.html">Go back</a>
+   
+    <ul id="categories">
+        <li class="item">
+          <h2>Animals</h2>
+          <ul>
+            <li>Cat</li>
+            <li>Hamster</li>
+            <li>Horse</li>
+            <li>Parrot</li>
+          </ul>
+        </li>
+        <li class="item">
+          <h2>Products</h2>
+          <ul>
+            <li>Bread</li>
+            <li>Prasley</li>
+            <li>Cheese</li>
+          </ul>
+        </li>
+        <li class="item">
+          <h2>Technologies</h2>
+          <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>React</li>
+            <li>Node.js</li>
+          </ul>
+        </li>
+      </ul>
+
+      <script>
+        // Select all li elements with class "item" inside ul#categories
+        const categories = document.querySelectorAll("#categories .item");
+
+        // Display the total number of categories
+        console.log(`Number of categories: ${categories.length}`);
+
+        // Loop through each category and log its details
+        categories.forEach(category => {
+            // Get the text content of the <h2> element
+            const categoryTitle = category.querySelector("h2").textContent;
+            
+            // Count the number of nested <li> elements
+            const itemsCount = category.querySelectorAll("li").length;
+            
+            // Display the category title and number of items
+            console.log(`Category: ${categoryTitle}`);
+            console.log(`Elements: ${itemsCount}`);
+        });
+
+      </script>
+</body>
+</html>
+
+</body>
+</html>    

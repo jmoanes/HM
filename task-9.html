@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task-09</title>
+    <style>
+
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+            transition: background-color 0.3s;
+            font-family: Arial, sans-serif;
+        }
+
+        button {                            
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+            background-color: #136AC2;
+            color: white;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        #colorHex {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 10px;
+            color: #333;
+        }
+    </style>
+</head>
+<a href="index.html">Go Back</a>
+<body>
+
+    <div id="colorHex">Background Color: #f4f4f4</div>
+    <button id="colorButton">Change the color</button>
+
+    <script>
+        const button = document.getElementById('colorButton');
+        const colorHexText = document.getElementById('colorHex');
+        const colors = ['#136AC2', '#4CAF50', '#FF5733', '#8E44AD', '#E67E22']; 
+        let currentIndex = 0;
+
+        button.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % colors.length;
+            document.body.style.backgroundColor = colors[currentIndex];
+            colorHexText.textContent = `Background Color: ${colors[currentIndex]}`;
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task-06</title>
+</head>
+<body>
+    <div>
+        <input type="text" id="symbolInput" maxlength="6" placeholder="Enter 6 symbols" />
+        <div id="errorMessage" style="color: red; display: none;">Please enter exactly 6 symbols.</div>
+    </div>
+    
+    <script>
+        document.getElementById('symbolInput').addEventListener('blur', function() {
+            let input = this.value;
+            let errorMessage = document.getElementById('errorMessage');
+            
+            if (input.length === 6) {
+                errorMessage.style.display = 'none';
+            } else {
+                errorMessage.style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>

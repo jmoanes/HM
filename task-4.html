@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task-04</title>
+</head>
+<body>
+
+<a href="index.html">Go Back</a>
+
+
+<div style="display: flex; align-items: center;">
+    <button onclick="decrease()">−</button>
+    <div id="counter" style="margin: 0 15px; font-size: 24px; font-weight: bold;">0</div>
+    <button style="cursor: pointer;" onclick="increase()">+</button>
+</div>
+
+
+
+<script>
+    let count = 0;
+
+    function increase() {
+        count++;
+        document.getElementById("counter").innerText = count;
+    }
+
+    function decrease() {
+        if (count > 0) { 
+            count--;
+            document.getElementById("counter").innerText = count;
+        }
+    }
+</script>
+
+</body>
+</html>
+
+
